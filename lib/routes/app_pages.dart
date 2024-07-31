@@ -1,3 +1,5 @@
+import 'package:garage_vendor/app/home/home_binding.dart';
+import 'package:garage_vendor/app/home/home_view.dart';
 import 'package:garage_vendor/app/splash/splash_binding.dart';
 import 'package:garage_vendor/app/splash/splash_view.dart';
 import 'package:garage_vendor/routes/app_routes.dart';
@@ -9,6 +11,11 @@ class AppPages {
       name: AppRoutes.splash,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.home,
+      page: () => const HomeView(),
+      binding: HomeBinding(),
     ),
   ];
 }

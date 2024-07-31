@@ -1,3 +1,4 @@
+import 'package:garage_vendor/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -18,10 +19,12 @@ class SplashController extends GetxController {
   }
 
   Future checkFirstSeen() async {
+    Get.offNamed(AppRoutes.home);
+
     // String? apiToken = box.read('api_token');
     // bool firstRun = await IsFirstRun.isFirstRun();
     // if (firstRun == true) {
-      // Get.offNamed(AppRoutes.onboarding);
+    // Get.offNamed(AppRoutes.onboarding);
     // } else {
     //   if (apiToken != null) {
     //     Get.offNamed(AppRoutes.main);
