@@ -4,13 +4,19 @@ import 'package:garage_vendor/utils/app_colors/app_colors.dart';
 import 'package:garage_vendor/utils/app_text/app_text.dart';
 
 class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({super.key});
+  const HomeAppbar({
+    super.key,
+    this.notification,
+    this.chat,
+  });
+
+  final notification;
+  final chat;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 16.0), // Adding some padding for better alignment
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -18,7 +24,7 @@ class HomeAppbar extends StatelessWidget {
             children: [
               Image.asset('assets/images/appbar.png'),
               AppText(
-                title: 'Street Garage',
+                title: '  Street Garage',
                 size: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -30,10 +36,12 @@ class HomeAppbar extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(6),
-                    child: SvgPicture.asset('assets/images/bell.svg'),
+                    child: InkWell(
+                        onTap: notification,
+                        child: SvgPicture.asset('assets/images/bell.svg')),
                   ),
                   Positioned(
-                    top: 2,
+                    top: 3,
                     right: 0,
                     child: Container(
                       height: 7,
@@ -50,7 +58,9 @@ class HomeAppbar extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/chat.png'),
+                    child: InkWell(
+                        onTap: chat,
+                        child: Image.asset('assets/images/chat.png')),
                   ),
                   Positioned(
                     top: 2,

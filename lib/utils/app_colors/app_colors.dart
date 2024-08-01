@@ -8,6 +8,7 @@ class AppColors {
   static Color primary_color = const Color(0xFF990002);
   static Color primary_bg_color = const Color(0xFFF7F9FC);
   static Color white_color = const Color(0xffFFFFFF);
+    static Color light_red = const Color(0xFFFFF6F6);
 
   //* APP GRADIENTS
   static Gradient LOGINSCREEN_GRADIENT = const LinearGradient(
