@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-
   //* APP COLORS
   static Color primary_color = const Color(0xFF990002);
   static Color white_color = const Color(0xffFFFFFF);
@@ -12,6 +11,7 @@ class AppColors {
   static Color hint_text_color = const Color(0xFF000000).withOpacity(0.6);
   static Color heading_text_color = const Color(0xFF2D0001);
   static Color green_color = const Color(0xFF44CC04);
+  static Color light_red = const Color(0xFFFFF6F6);
 
   //* APP GRADIENTS
   static Gradient LOGINSCREEN_GRADIENT = const LinearGradient(
