@@ -12,6 +12,9 @@ class AppColors {
   static Color heading_text_color = const Color(0xFF2D0001);
   static Color green_color = const Color(0xFF44CC04);
   static Color light_red = const Color(0xFFFFF6F6);
+  static Color appbar_title_color = const Color(0xFF5C0000);
+  static Color divider_color = const Color(0xFFECECEC);
+
 
   //* APP GRADIENTS
   static Gradient LOGINSCREEN_GRADIENT = const LinearGradient(

@@ -6,6 +6,7 @@ import 'package:garage_vendor/app/auth/sign_up/components/inputfiled_title.dart'
 import 'package:garage_vendor/app/auth/sign_up/components/profile_and_cover_picker.dart';
 import 'package:garage_vendor/app/auth/sign_up/components/signup_triangle.dart';
 import 'package:garage_vendor/app/auth/sign_up/signup_controller.dart';
+import 'package:garage_vendor/routes/app_routes.dart';
 import 'package:garage_vendor/utils/app_button/app_button.dart';
 import 'package:garage_vendor/utils/app_colors/app_colors.dart';
 import 'package:garage_vendor/utils/app_constants/const_images.dart';
@@ -179,7 +180,7 @@ class SignupView extends StatelessWidget {
                             const Gap(12),
                             AppInputField(
                               errorText: controller.confirmPasswordError,
-                              hint: 'Password',
+                              hint: 'Confirm Password',
                               obscure: controller.cobscurePassword,
                               controller: controller.confirmPasswordController,
                               onchange: (val) {
@@ -188,8 +189,8 @@ class SignupView extends StatelessWidget {
                               },
                               hasSuffix: true,
                               suffixWidget: InkWell(
-                                onTap: controller.passwordToggle,
-                                child: controller.obscurePassword
+                                onTap: controller.confirmPasswordToggle,
+                                child: controller.cobscurePassword
                                     ? SvgPicture.asset(
                                         ImageConst.eye_off_ic,
                                         fit: BoxFit.scaleDown,
@@ -212,7 +213,9 @@ class SignupView extends StatelessWidget {
                             AppRichText(
                               title: "Already have an account?",
                               buttonText: 'Sign In',
-                              onTap: () {},
+                              onTap: () {
+                                 Get.offNamed(AppRoutes.signin);
+                              },
                             )
                           ],
                         ),

@@ -48,7 +48,7 @@ class SignInController extends GetxController {
     return emailErrorString.isEmpty && passwordErrorString.isEmpty;
   }
 
-  //TODO: Register Function
+  //TODO: Sign In Function
   login() async {
     if (await validateForm()) {}
   }

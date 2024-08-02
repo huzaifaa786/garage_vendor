@@ -35,7 +35,7 @@ class SplashController extends GetxController {
     // String? apiToken = box.read('api_token');
     // bool firstRun = await IsFirstRun.isFirstRun();
     // if (firstRun == true) {
-    Get.offAllNamed(AppRoutes.signin);
+    Get.offAllNamed(AppRoutes.product_form_view);
     // } else {
     //   if (apiToken != null) {
     //     Get.offNamed(AppRoutes.main);

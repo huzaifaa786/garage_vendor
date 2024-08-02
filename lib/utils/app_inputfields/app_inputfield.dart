@@ -99,7 +99,8 @@ class AppInputField extends StatelessWidget {
           ),
         ),
         if (errorText!.isNotEmpty)
-          Padding(
+          Container(
+            width: width,
             padding: EdgeInsets.only(top: 4, left: 16, right: 16),
             child: AppText(
               title: errorText!,
