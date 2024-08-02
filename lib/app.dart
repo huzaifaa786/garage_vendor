@@ -3,6 +3,7 @@ import 'package:garage_vendor/app/splash/splash_binding.dart';
 import 'package:garage_vendor/app/splash/splash_view.dart';
 import 'package:garage_vendor/routes/app_pages.dart';
 import 'package:garage_vendor/utils/app_colors/app_colors.dart';
+import 'package:garage_vendor/utils/app_constants/text_strings.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class MyApp extends StatelessWidget {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      title: "Mobile Guarge",
+      title: ConstantStrings.appName,
       initialBinding: SplashBinding(),
       home: const SplashView(),
       getPages: AppPages.pages,

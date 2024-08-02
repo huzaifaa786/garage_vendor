@@ -1,3 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:garage_vendor/utils/app_colors/app_colors.dart';
+
+var circularInputDecoration = BoxDecoration(
+  borderRadius: BorderRadius.circular(45),
+);
+
+//! INPUT CONTAINER DECORATION
+var circularErrorInputDecoration = BoxDecoration(
+  border: Border.all(color: AppColors.primary_color),
+  borderRadius: BorderRadius.circular(45),
+  // boxShadow: innerInputShadow
+);
+
+BoxDecoration appBoxDecotration({List<BoxShadow>? innerShadow,Color? color}) {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(45),
+    boxShadow: innerShadow,
+    color: color 
+  );
+}
+
 // BoxDecoration radioButtonDecoration(bool selected) {
 //   return BoxDecoration(
 //     color: selected == true ? AppColors.primary_color : AppColors.white_color,

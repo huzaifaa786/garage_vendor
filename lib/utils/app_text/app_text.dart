@@ -9,7 +9,7 @@ class AppText extends StatelessWidget {
       this.decoration = TextDecoration.none,
       this.size,
       this.fontWeight,
-      this.fontFamily,
+      this.fontFamily = 'inter',
       this.textAlign,
       this.height,
       this.letterSpacing,
@@ -33,17 +33,29 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: GoogleFonts.inter(
-          textStyle: TextStyle(
-        color: color,
-        fontSize: size,
-        height: height ?? 0,
-        fontStyle: fontStyle,
-        fontWeight: fontWeight,
-        decoration: decoration,
-        decorationColor: color,
-        letterSpacing: letterSpacing,
-      )),
+      style: fontFamily == 'inter'
+          ? GoogleFonts.inter(
+              textStyle: TextStyle(
+              color: color,
+              fontSize: size,
+              height: height ?? 0,
+              fontStyle: fontStyle,
+              fontWeight: fontWeight,
+              decoration: decoration,
+              decorationColor: color,
+              letterSpacing: letterSpacing,
+            ))
+          : GoogleFonts.ibarraRealNova(
+              textStyle: TextStyle(
+              color: color,
+              fontSize: size,
+              height: height ?? 0,
+              fontStyle: fontStyle,
+              fontWeight: fontWeight,
+              decoration: decoration,
+              decorationColor: color,
+              letterSpacing: letterSpacing,
+            )),
       overflow: overFlow,
       textAlign: textAlign,
       maxLines: maxLines,
