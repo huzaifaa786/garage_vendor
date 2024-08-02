@@ -47,96 +47,101 @@ class _AvaliableDateViewState extends State<AvaliableDateView> {
             ),
           ),
         ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Gap(10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AppText(
-                    title: '*Select date to mark as unavailable',
-                    color: AppColors.primary_color,
-                  )
-                ],
-              ),
-              Gap(24),
-              Container(
-                decoration: BoxDecoration(
-                    color: AppColors.light_red,
-                    borderRadius: BorderRadius.circular(2)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TableCalendar(
-                    firstDay: DateTime.utc(2010, 10, 16),
-                    lastDay: DateTime.utc(2030, 3, 14),
-                    focusedDay: controller.focusedDay,
-                    selectedDayPredicate: (day) => controller.isSelected(day),
-                    availableCalendarFormats: const {
-                      CalendarFormat.month: 'Month',
-                    },
-                    onDaySelected: controller.onDaySelected,
-                    onPageChanged: (focusedDay) {
-                      controller.focusedDay = focusedDay;
-                    },
-                    calendarFormat: controller.format,
-                    calendarStyle: CalendarStyle(
-                      todayDecoration: BoxDecoration(
-                          color: AppColors.primary_color.withOpacity(0.5),
-                          shape: BoxShape.circle),
-                      selectedDecoration: BoxDecoration(
-                          color: AppColors.primary_color, shape: BoxShape.circle),
-                      markerDecoration: BoxDecoration(
-                        color: AppColors.primary_color,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    headerStyle: HeaderStyle(
-                      leftChevronIcon: Container(
-                        decoration: BoxDecoration(),
-                        child: Icon(
-                          Icons.chevron_left,
-                          color: AppColors.primary_color,
-                        ),
-                      ),
-                      rightChevronIcon: Container(
-                        decoration: BoxDecoration(),
-                        child: Icon(
-                          Icons.chevron_right,
-                          color: AppColors.primary_color,
-                        ),
-                      ),
-                      titleCentered: true,
-                      titleTextStyle: TextStyle(
-                          color: AppColors.primary_color,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20,),
-                child: Column(
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                Gap(10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 49),
-                          child: AppText(
-                            title: 'Unavailable dates',
+                    AppText(
+                      title: '*Select date to mark as unavailable',
+                      color: AppColors.primary_color,
+                    )
+                  ],
+                ),
+                Gap(24),
+                Container(
+                  decoration: BoxDecoration(
+                      color: AppColors.light_red,
+                      borderRadius: BorderRadius.circular(2)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TableCalendar(
+                      firstDay: DateTime.utc(2010, 10, 16),
+                      lastDay: DateTime.utc(2030, 3, 14),
+                      focusedDay: controller.focusedDay,
+                      selectedDayPredicate: (day) => controller.isSelected(day),
+                      availableCalendarFormats: const {
+                        CalendarFormat.month: 'Month',
+                      },
+                      onDaySelected: controller.onDaySelected,
+                      onPageChanged: (focusedDay) {
+                        controller.focusedDay = focusedDay;
+                      },
+                      calendarFormat: controller.format,
+                      calendarStyle: CalendarStyle(
+                        todayDecoration: BoxDecoration(
+                            color: AppColors.primary_color.withOpacity(0.5),
+                            shape: BoxShape.circle),
+                        selectedDecoration: BoxDecoration(
+                            color: AppColors.primary_color,
+                            shape: BoxShape.circle),
+                        markerDecoration: BoxDecoration(
+                          color: AppColors.primary_color,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      headerStyle: HeaderStyle(
+                        leftChevronIcon: Container(
+                          decoration: BoxDecoration(),
+                          child: Icon(
+                            Icons.chevron_left,
                             color: AppColors.primary_color,
                           ),
                         ),
-                      ],
+                        rightChevronIcon: Container(
+                          decoration: BoxDecoration(),
+                          child: Icon(
+                            Icons.chevron_right,
+                            color: AppColors.primary_color,
+                          ),
+                        ),
+                        titleCentered: true,
+                        titleTextStyle: TextStyle(
+                            color: AppColors.primary_color,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
-                    Gap(13),
-                    SelectedDate()
-                  ],
+                  ),
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 49),
+                            child: AppText(
+                              title: 'Unavailable dates',
+                              color: AppColors.primary_color,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Gap(13),
+                      SelectedDate()
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

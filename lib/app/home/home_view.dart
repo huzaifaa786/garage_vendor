@@ -32,7 +32,9 @@ class _HomeViewState extends State<HomeView> {
           automaticallyImplyLeading: false,
           title: HomeAppbar(
             chat: () {},
-            notification: () {},
+            notification: () {
+              Get.toNamed(AppRoutes.notification);
+            },
           ),
         ),
         body: SingleChildScrollView(

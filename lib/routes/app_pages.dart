@@ -1,3 +1,5 @@
+import 'package:garage_vendor/app/auth/changepassword/changepassword_binding.dart';
+import 'package:garage_vendor/app/auth/changepassword/changepassword_view.dart';
 import 'package:garage_vendor/app/auth/sign_in/signin_binding.dart';
 import 'package:garage_vendor/app/auth/sign_in/signin_view.dart';
 import 'package:garage_vendor/app/auth/sign_up/signup_binding.dart';
@@ -8,6 +10,8 @@ import 'package:garage_vendor/app/editprofile.dart/editprofile_binding.dart';
 import 'package:garage_vendor/app/editprofile.dart/editprofile_view.dart';
 import 'package:garage_vendor/app/home/home_binding.dart';
 import 'package:garage_vendor/app/home/home_view.dart';
+import 'package:garage_vendor/app/notification/notification_binding.dart';
+import 'package:garage_vendor/app/notification/notification_view.dart';
 import 'package:garage_vendor/app/sale/sale_binding.dart';
 import 'package:garage_vendor/app/sale/sale_view.dart';
 import 'package:garage_vendor/app/splash/splash_binding.dart';
@@ -56,6 +60,16 @@ class AppPages {
       name: AppRoutes.sale,
       page: () => const SaleView(),
       binding: SaleBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.changepassword,
+      page: () => const ChangepasswordView(),
+      binding: ChangepasswordBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.notification,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }
