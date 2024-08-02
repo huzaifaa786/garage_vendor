@@ -21,6 +21,17 @@ class ImageSelectorApi {
     }
   }
 
+  selectMultipleImages() async {
+    final pickedFile = await picker.pickMultiImage();
+
+    // if (pickedFile != null) {
+    //   return File(pickedFile.path);
+    // } else {
+    //   UiUtilites.errorSnackbar('Image selection failed'.tr,
+    //       'Failed to select image, please try again.'.tr);
+    // }
+  }
+
   selectCameraImage() async {
     final pickedFile = await picker.pickImage(
       source: ImageSource.camera,

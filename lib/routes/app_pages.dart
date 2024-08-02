@@ -1,5 +1,10 @@
 import 'package:garage_vendor/app/auth/changepassword/changepassword_binding.dart';
 import 'package:garage_vendor/app/auth/changepassword/changepassword_view.dart';
+import 'package:garage_vendor/app/auth/change_forgot_password/change_forgot_password_binding.dart';
+import 'package:garage_vendor/app/auth/change_forgot_password/change_forgot_password_view.dart';
+import 'package:garage_vendor/app/auth/forgot_password/forgot_otp_verify/forgot_otp_verify.dart';
+import 'package:garage_vendor/app/auth/forgot_password/forgot_password_binding.dart';
+import 'package:garage_vendor/app/auth/forgot_password/forgot_password_view.dart';
 import 'package:garage_vendor/app/auth/sign_in/signin_binding.dart';
 import 'package:garage_vendor/app/auth/sign_in/signin_view.dart';
 import 'package:garage_vendor/app/auth/sign_up/signup_binding.dart';
@@ -12,6 +17,8 @@ import 'package:garage_vendor/app/home/home_binding.dart';
 import 'package:garage_vendor/app/home/home_view.dart';
 import 'package:garage_vendor/app/notification/notification_binding.dart';
 import 'package:garage_vendor/app/notification/notification_view.dart';
+import 'package:garage_vendor/app/product/product_form/product_form_binding.dart';
+import 'package:garage_vendor/app/product/product_form/product_form_view.dart';
 import 'package:garage_vendor/app/sale/sale_binding.dart';
 import 'package:garage_vendor/app/sale/sale_view.dart';
 import 'package:garage_vendor/app/splash/splash_binding.dart';
@@ -41,6 +48,36 @@ class AppPages {
       page: () => const SignInView(),
       binding: SignInBinding(),
     ),
+
+    //* {Forgot Route}
+    GetPage(
+      name: AppRoutes.forgot_password,
+      page: () => const ForgotPasswordView(),
+      binding: ForgotPasswordBinding(),
+    ),
+
+    //* {Forgot Otp Verify Route}
+    GetPage(
+      name: AppRoutes.forgot_otp_verify,
+      page: () => const ForgotOtpVerifyView(),
+      binding: ForgotPasswordBinding(),
+    ),
+
+    //* {Cahnge Forgot Password Route}
+    GetPage(
+      name: AppRoutes.change_forgot_password,
+      page: () => const ChangeForgotPasswordView(),
+      binding: ChangeForgotPasswordBinding(),
+    ),
+
+    //* {Product Form View Route}
+    GetPage(
+      name: AppRoutes.product_form_view,
+      page: () => const ProductFormView(),
+      binding: ProductFormBinding(),
+    ),
+
+    //
     GetPage(
       name: AppRoutes.home,
       page: () => HomeView(),

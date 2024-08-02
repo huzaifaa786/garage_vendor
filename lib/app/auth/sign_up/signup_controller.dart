@@ -140,7 +140,7 @@ class SignUpController extends GetxController {
     final passwordErrorString =
         validateFields('password', passwordController.text);
     final confirmPasswordErrorString =
-        validateFields('confirm_password', passwordController.text);
+        validateFields('confirm_password', confirmPasswordController.text);
     if (checkphoneController != null) {
       phoneValidation(checkphoneController);
     } else {
