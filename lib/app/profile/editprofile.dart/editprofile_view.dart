@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:garage_vendor/app/editprofile.dart/component/button.dart';
-import 'package:garage_vendor/app/editprofile.dart/component/profile_cover_picker.dart';
-import 'package:garage_vendor/app/editprofile.dart/editprofile_controller.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/component/button.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/component/profile_cover_picker.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/editprofile_controller.dart';
 import 'package:garage_vendor/app/home/components/review_box.dart';
 import 'package:garage_vendor/routes/app_routes.dart';
 import 'package:garage_vendor/utils/app_button/app_button.dart';

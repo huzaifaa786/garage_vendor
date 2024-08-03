@@ -1,4 +1,4 @@
-import 'package:garage_vendor/app/auth/changepassword/changepassword_controller.dart';
+import 'package:garage_vendor/app/profile/changepassword/changepassword_controller.dart';
 import 'package:get/get.dart';
 
 class ChangepasswordBinding extends Bindings {

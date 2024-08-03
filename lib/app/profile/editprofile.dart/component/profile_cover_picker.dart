@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:garage_vendor/app/auth/sign_up/signup_controller.dart';
-import 'package:garage_vendor/app/editprofile.dart/editprofile_controller.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/editprofile_controller.dart';
 import 'package:garage_vendor/utils/app_colors/app_colors.dart';
 import 'package:garage_vendor/utils/app_constants/const_images.dart';
 import 'package:garage_vendor/utils/app_constants/text_strings.dart';
