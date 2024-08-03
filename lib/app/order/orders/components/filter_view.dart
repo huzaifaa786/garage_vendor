@@ -11,67 +11,57 @@ class FilterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<OrdersController>(
       builder: (controller) => Container(
-        // height: 50,
+        height: 40,
+        width: Get.width,
         decoration: BoxDecoration(
-            color: AppColors.divider_color,
-            // borderRadius: BorderRadius.only(
-            //   bottomLeft: Radius.circular(15),
-            //   bottomRight: Radius.circular(15),
-            // )
+          color: AppColors.white_color,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
           ),
-        child: Container(
-          height: 40,
-          width: Get.width,
-          decoration: BoxDecoration(
-            color: AppColors.white_color,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
-            )
-          ),
-          child: Center(
-            child: ListView.builder(
-              itemCount: controller.filterList.length,
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              primary: false,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(
-                  onTap: () {
-                    controller.selectedIndex = index;
-                    controller.update();
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 3,
-                          color: controller.selectedIndex == index
-                              ? AppColors.primary_color
-                              : AppColors.input_bg_color,
-                        ),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: Row(
-                        children: [
-                          AppText(
-                            title: controller.filterList[index]['Name'],
-                            size: 11,
-                            fontWeight: FontWeight.w600,
-                            color: controller.selectedIndex == index
-                              ? AppColors.primary_color
-                              : AppColors.hint_text_color,
-                          ),
-                        ],
+        ),
+        child: Center(
+          child: ListView.builder(
+            itemCount: controller.filterList.length,
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            primary: false,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                onTap: () {
+                  controller.selectedIndex = index;
+                  controller.update();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 3,
+                        color: controller.selectedIndex == index
+                            ? AppColors.primary_color
+                            : AppColors.hint_text_color.withOpacity(0.15),
                       ),
                     ),
                   ),
-                );
-              },
-            ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Row(
+                      children: [
+                        AppText(
+                          title: controller.filterList[index]['Name'],
+                          size: 11,
+                          fontWeight: FontWeight.w600,
+                          color: controller.selectedIndex == index
+                              ? AppColors.primary_color
+                              : AppColors.hint_text_color,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
           ),
         ),
       ),

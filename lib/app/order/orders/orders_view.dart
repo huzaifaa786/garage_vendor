@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:garage_vendor/app/order/orders/components/filter_view.dart';
+import 'package:garage_vendor/app/order/orders/components/sub_filter.dart';
 import 'package:garage_vendor/app/order/orders/orders_controller.dart';
 import 'package:garage_vendor/layout/app_layout.dart';
-import 'package:garage_vendor/utils/app_colors/app_colors.dart';
 import 'package:get/get.dart';
 
 class OrdersView extends StatelessWidget {
@@ -14,11 +15,15 @@ class OrdersView extends StatelessWidget {
       autoRemove: false,
       builder: (controller) => AppLayout(
         appBarTitle: 'Orders',
+        hasBgColor: true,
         child: SingleChildScrollView(
           child: Column(
             children: [
               FilterView(),
-              Divider(color: AppColors.divider_color, thickness: 10),
+              if(controller.selectedIndex == 0)...[
+                Gap(12),
+                SubFilterView()
+              ]
             ],
           ),
         ),
