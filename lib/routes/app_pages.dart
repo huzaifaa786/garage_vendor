@@ -1,3 +1,5 @@
+import 'package:garage_vendor/app/chat/chat_binding.dart';
+import 'package:garage_vendor/app/chat/chat_view.dart';
 import 'package:garage_vendor/app/profile/changepassword/changepassword_binding.dart';
 import 'package:garage_vendor/app/profile/changepassword/changepassword_view.dart';
 import 'package:garage_vendor/app/auth/change_forgot_password/change_forgot_password_binding.dart';
@@ -107,6 +109,11 @@ class AppPages {
       name: AppRoutes.notification,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
+    ),
+     GetPage(
+      name: AppRoutes.chat,
+      page: () => const ChatView(),
+      binding: ChatBinding(),
     ),
   ];
 }

@@ -18,7 +18,7 @@ class _NotificationViewState extends State<NotificationView> {
     return GetBuilder<NotificationController>(
       autoRemove: false,
       builder: (controller) => AppLayout(
-          appBarTitle: 'Add Product or Service',
+          appBarTitle: 'Notification',
           hasBgColor: true,
           child: Column(
             children: [
