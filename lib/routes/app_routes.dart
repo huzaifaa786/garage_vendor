@@ -20,6 +20,6 @@ class AppRoutes {
   static const avaliabledate = '/avaliabledate';
   static const sale = '/sale';
   static const changepassword = '/changepassword';
-    static const notification = '/notification';
-
+  static const notification = '/notification';
+  static const chat = '/chat';
 }

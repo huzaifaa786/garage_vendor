@@ -31,7 +31,9 @@ class _HomeViewState extends State<HomeView> {
           scrolledUnderElevation: 0,
           automaticallyImplyLeading: false,
           title: HomeAppbar(
-            chat: () {},
+            chat: () {
+              Get.toNamed(AppRoutes.chat);
+            },
             notification: () {
               Get.toNamed(AppRoutes.notification);
             },
