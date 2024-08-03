@@ -1,12 +1,17 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:garage_vendor/routes/app_routes.dart';
 import 'package:garage_vendor/services/validation_services.dart';
+import 'package:garage_vendor/utils/image_picker/image_picker.dart';
+import 'package:garage_vendor/utils/ui_utils.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class ProductFormController extends GetxController {
   static ProductFormController instance = Get.find();
   GetStorage box = GetStorage();
+  List<File> images = [];
 
   //TODO: SERVICE TYPE VARIABLE AND FUNCTION
   List<Map<String, dynamic>> serviceTypeList = [];
@@ -37,21 +42,35 @@ class ProductFormController extends GetxController {
 
   //* Remove Service Type Item From list
   void removeExtra(int index) {
-    // UiUtilites.confirmAlert(
-    //   title: 'Are you sure you want to delete this Extra Item?'.tr,
-    //   context: Get.context,
-    //   onPressCancel: () {
-    //     Get.back();
-    //   },
-    //   onPressOK: () {
-    //     extraList.removeAt(index);
-    //     Get.back();
-    //     update();
-    //   },
-    //   textCancel: 'No'.tr,
-    //   textOk: 'Yes'.tr,
-    //   color: red,
-    // );
+    UiUtilites.confirmAlertDialog(
+      title: 'Are you sure you want to delete this Service Type?',
+      context: Get.context,
+      onCancelTap: () {
+        Get.back();
+      },
+      onConfirmTap: () {
+        serviceTypeList.removeAt(index);
+        Get.back();
+        update();
+      },
+      cancelText: 'No'.tr,
+      confirmText: 'Yes'.tr,
+    );
+  }
+
+  //TODO: On Multi Image Select
+  onMultipleImagePick() async {
+    List<File> selectedImages = await ImageSelectorApi().selectMultipleImages();
+    if (selectedImages.isNotEmpty) {
+      images.addAll(selectedImages);
+      update();
+    }
+  }
+
+  removeSelectedImages(int index) {
+    images.removeAt(index);
+    Get.back();
+    update();
   }
 
   //TODO: InputFields Controllers
