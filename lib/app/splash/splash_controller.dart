@@ -36,6 +36,7 @@ class SplashController extends GetxController {
     // bool firstRun = await IsFirstRun.isFirstRun();
     // if (firstRun == true) {
     Get.offAllNamed(AppRoutes.orders_view);
+    // Get.offAllNamed(AppRoutes.signin);
     // } else {
     //   if (apiToken != null) {
     //     Get.offNamed(AppRoutes.main);

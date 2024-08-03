@@ -8,14 +8,18 @@ class AppLayout extends StatelessWidget {
     required this.child,
     this.appBarTitle,
     this.hasIcon = true,
+    this.hasBgColor = false,
   });
   final Widget child;
   final String? appBarTitle;
   final bool hasIcon;
+  final bool hasBgColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          hasBgColor ? AppColors.divider_color : AppColors.white_color,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: Container(

@@ -1,3 +1,5 @@
+import 'package:garage_vendor/app/profile/changepassword/changepassword_binding.dart';
+import 'package:garage_vendor/app/profile/changepassword/changepassword_view.dart';
 import 'package:garage_vendor/app/auth/change_forgot_password/change_forgot_password_binding.dart';
 import 'package:garage_vendor/app/auth/change_forgot_password/change_forgot_password_view.dart';
 import 'package:garage_vendor/app/auth/forgot_password/forgot_otp_verify/forgot_otp_verify.dart';
@@ -9,12 +11,14 @@ import 'package:garage_vendor/app/auth/sign_up/signup_binding.dart';
 import 'package:garage_vendor/app/auth/sign_up/signup_view.dart';
 import 'package:garage_vendor/app/avaliable_date/avaliabledate_binding.dart';
 import 'package:garage_vendor/app/avaliable_date/avaliabledate_view.dart';
-import 'package:garage_vendor/app/editprofile.dart/editprofile_binding.dart';
-import 'package:garage_vendor/app/editprofile.dart/editprofile_view.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/editprofile_binding.dart';
+import 'package:garage_vendor/app/profile/editprofile.dart/editprofile_view.dart';
 import 'package:garage_vendor/app/home/home_binding.dart';
 import 'package:garage_vendor/app/home/home_view.dart';
 import 'package:garage_vendor/app/order/orders/orders_binding.dart';
 import 'package:garage_vendor/app/order/orders/orders_view.dart';
+import 'package:garage_vendor/app/notification/notification_binding.dart';
+import 'package:garage_vendor/app/notification/notification_view.dart';
 import 'package:garage_vendor/app/product/product_form/product_form_binding.dart';
 import 'package:garage_vendor/app/product/product_form/product_form_view.dart';
 import 'package:garage_vendor/app/sale/sale_binding.dart';
@@ -102,6 +106,16 @@ class AppPages {
       name: AppRoutes.sale,
       page: () => const SaleView(),
       binding: SaleBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.changepassword,
+      page: () => const ChangepasswordView(),
+      binding: ChangepasswordBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.notification,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }
