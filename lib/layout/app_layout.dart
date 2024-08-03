@@ -9,11 +9,13 @@ class AppLayout extends StatelessWidget {
     this.appBarTitle,
     this.hasIcon = true,
     this.hasBgColor = false,
+    this.hasShadow = true,
   });
   final Widget child;
   final String? appBarTitle;
   final bool hasIcon;
   final bool hasBgColor;
+  final bool hasShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,12 @@ class AppLayout extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
-            boxShadow: [
+            boxShadow: hasShadow ? [
               BoxShadow(
                 color: AppColors.black_color.withOpacity(0.2),
                 blurRadius: 4,
               ),
-            ],
+            ]: null,
           ),
           child: AppBar(
             automaticallyImplyLeading: false,

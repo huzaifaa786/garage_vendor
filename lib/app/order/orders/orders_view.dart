@@ -16,6 +16,7 @@ class OrdersView extends StatelessWidget {
       builder: (controller) => AppLayout(
         appBarTitle: 'Orders',
         hasBgColor: true,
+        hasShadow: false,
         child: SingleChildScrollView(
           child: Column(
             children: [
