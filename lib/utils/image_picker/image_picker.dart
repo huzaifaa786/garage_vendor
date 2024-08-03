@@ -21,15 +21,16 @@ class ImageSelectorApi {
     }
   }
 
-  selectMultipleImages() async {
-    final pickedFile = await picker.pickMultiImage();
+  Future<List<File>> selectMultipleImages() async {
+    final List<XFile>? pickedFiles = await picker.pickMultiImage();
 
-    // if (pickedFile != null) {
-    //   return File(pickedFile.path);
-    // } else {
-    //   UiUtilites.errorSnackbar('Image selection failed'.tr,
-    //       'Failed to select image, please try again.'.tr);
-    // }
+    if (pickedFiles != null && pickedFiles.isNotEmpty) {
+      return pickedFiles.map((file) => File(file.path)).toList();
+    } else {
+      UiUtilites.errorSnackbar('Image selection failed'.tr,
+          'Failed to select image, please try again.'.tr);
+      return [];
+    }
   }
 
   selectCameraImage() async {

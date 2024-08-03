@@ -13,6 +13,8 @@ import 'package:garage_vendor/app/editprofile.dart/editprofile_binding.dart';
 import 'package:garage_vendor/app/editprofile.dart/editprofile_view.dart';
 import 'package:garage_vendor/app/home/home_binding.dart';
 import 'package:garage_vendor/app/home/home_view.dart';
+import 'package:garage_vendor/app/order/orders/orders_binding.dart';
+import 'package:garage_vendor/app/order/orders/orders_view.dart';
 import 'package:garage_vendor/app/product/product_form/product_form_binding.dart';
 import 'package:garage_vendor/app/product/product_form/product_form_view.dart';
 import 'package:garage_vendor/app/sale/sale_binding.dart';
@@ -71,6 +73,13 @@ class AppPages {
       name: AppRoutes.product_form_view,
       page: () => const ProductFormView(),
       binding: ProductFormBinding(),
+    ),
+
+     //* {Order List View Route}
+    GetPage(
+      name: AppRoutes.orders_view,
+      page: () => const OrdersView(),
+      binding: OrdersBinding(),
     ),
 
     //

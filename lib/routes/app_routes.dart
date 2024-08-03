@@ -11,6 +11,9 @@ class AppRoutes {
   //! PRODUCT ROUTES
   static const product_form_view = '/product-form-view';
 
+  //! ORDERS ROUTES
+  static const orders_view = '/orders-view';
+
   //
   static const home = '/home';
   static const editprofile = '/editprofile';
