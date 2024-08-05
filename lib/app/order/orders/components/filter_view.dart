@@ -11,7 +11,7 @@ class FilterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<OrdersController>(
       builder: (controller) => Container(
-        height: 40,
+        height: 35,
         width: Get.width,
         decoration: BoxDecoration(
           color: AppColors.white_color,
